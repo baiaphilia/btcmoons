@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0e27;
+    --bg-secondary: #131829;
+    --bg-card: #1a1f3a;
+    --bg-card-hover: #1f2544;
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-muted: #6b7280;
+    --accent-gold: #f7931a;
+    --accent-moon: #ffd700;
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --border-color: #2a2f4a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-moon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+
+/* Moon Phase Card (with integrated cycle) */
+.moon-phase-card .cycle-track {
+    background: var(--bg-secondary);
+    border-radius: 50px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.moon-info {
+    text-align: center;
+}
+
+.moon-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.moon-illumination {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+/* Upcoming Moon Events Card */
+.upcoming-events {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upcoming-event {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s;
+}
+
+.upcoming-event:hover {
+    border-color: var(--accent-moon);
+}
+
+.event-icon {
+    font-size: 2rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.event-datetime {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Cycle phases (now inside moon phase card) */
+.cycle-phases {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.phase-marker {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.phase-marker:hover {
+    transform: scale(1.2);
+}
+
+.phase-marker.active {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 10px var(--accent-moon));
+}
+
+.cycle-days {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Chart Card */
+.chart-card {
+    grid-column: 1 / -1;
+    margin-bottom: 30px;
+}
+
+.chart-hint {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Seasonal Calendar */
+.seasonal-card {
+    grid-column: 1 / -1;
+}
+
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.season-item {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.season-item:hover {
+    transform: scale(1.02);
+}
+
+.season-item.positive {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.season-item.very-positive {
+    border-color: rgba(16, 185, 129, 0.5);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.season-item.negative {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.season-month {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.season-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.season-nickname {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-moon);
+    margin-bottom: 5px;
+}
+
+.season-stat {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.season-item.positive .season-stat,
+.season-item.very-positive .season-stat {
+    color: var(--accent-green);
+}
+
+.season-item.negative .season-stat {
+    color: var(--accent-red);
+}
+
+.season-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.disclaimer-small {
+    font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .moon-display {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.loading {
+    animation: pulse 2s ease-in-out infinite;
+}

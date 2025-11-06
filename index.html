@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corn Moon Cycles - Bitcoin & Lunar Correlations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌽 Corn Moon Cycles</h1>
+            <p class="subtitle">Tracking Bitcoin's cosmic dance with the moon</p>
+        </header>
+
+        <div class="grid">
+            <!-- Current Moon Phase Card (with cycle position) -->
+            <div class="card moon-phase-card">
+                <h2>Current Moon Phase</h2>
+                <div class="cycle-track">
+                    <div class="cycle-phases">
+                        <span class="phase-marker" data-phase="new">🌑</span>
+                        <span class="phase-marker" data-phase="waxing">🌒</span>
+                        <span class="phase-marker" data-phase="first">🌓</span>
+                        <span class="phase-marker" data-phase="waxing-gibbous">🌔</span>
+                        <span class="phase-marker" data-phase="full">🌕</span>
+                        <span class="phase-marker" data-phase="waning-gibbous">🌖</span>
+                        <span class="phase-marker" data-phase="last">🌗</span>
+                        <span class="phase-marker" data-phase="waning">🌘</span>
+                    </div>
+                </div>
+                <div class="moon-info">
+                    <div class="moon-name" id="moon-name">Full Moon</div>
+                    <div class="moon-illumination" id="moon-illumination">100%</div>
+                    <div class="cycle-days" id="cycle-days">Day 15 of 29.5</div>
+                </div>
+            </div>
+
+            <!-- Upcoming Moon Events Card -->
+            <div class="card upcoming-moon-card">
+                <h2>Upcoming</h2>
+                <div class="upcoming-events" id="upcoming-events">
+                    <div class="upcoming-event">
+                        <span class="event-icon">🌕</span>
+                        <div class="event-info">
+                            <div class="event-type">Full Moon (Bull)</div>
+                            <div class="event-datetime">Nov 15, 2025 - 9:28 PM</div>
+                        </div>
+                    </div>
+                    <div class="upcoming-event">
+                        <span class="event-icon">🦫</span>
+                        <div class="event-info">
+                            <div class="event-type">Beaver Moon</div>
+                            <div class="event-datetime">Nov 15, 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historical Data Section -->
+        <div class="card chart-card">
+            <h2>Corn Performance & Moon Phases</h2>
+            <div class="chart-hint">Scroll to zoom • Drag to pan • Double-click to reset</div>
+            <div class="chart-container">
+                <canvas id="price-chart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <span>🌕 Full Moon = Bull Moon</span>
+                <span>🌑 New Moon = Bear Moon</span>
+            </div>
+        </div>
+
+        <!-- Seasonal Calendar -->
+        <div class="card seasonal-card">
+            <h2>Crypto Seasonal Patterns</h2>
+            <div class="seasonal-grid">
+                <div class="season-item negative">
+                    <div class="season-month">September</div>
+                    <div class="season-emoji">📉</div>
+                    <div class="season-nickname">Rektember</div>
+                    <div class="season-stat">-4.78% avg</div>
+                    <div class="season-desc">Historically worst month (8/11 years negative)</div>
+                </div>
+                <div class="season-item positive">
+                    <div class="season-month">October</div>
+                    <div class="season-emoji">🎃</div>
+                    <div class="season-nickname">Uptober</div>
+                    <div class="season-stat">+22.90% avg</div>
+                    <div class="season-desc">Q4 rally begins (9/11 years positive)</div>
+                </div>
+                <div class="season-item very-positive">
+                    <div class="season-month">November</div>
+                    <div class="season-emoji">🦃</div>
+                    <div class="season-nickname">Best Month</div>
+                    <div class="season-stat">+46.81% avg</div>
+                    <div class="season-desc">Highest average return of any month</div>
+                </div>
+                <div class="season-item positive">
+                    <div class="season-month">Q4 Overall</div>
+                    <div class="season-emoji">🚀</div>
+                    <div class="season-nickname">Post-Halving Rally</div>
+                    <div class="season-stat">Strong</div>
+                    <div class="season-desc">Bull runs typically start autumn equinox</div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <p>Made with memes and data. Not financial advice. DYOR. 🌽🌕</p>
+            <p class="disclaimer-small">This site is for entertainment and educational purposes. Past performance doesn't guarantee future results.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+    <script src="script.js"></script>
+</body>
+</html>
